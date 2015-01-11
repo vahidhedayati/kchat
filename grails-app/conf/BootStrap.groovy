@@ -5,10 +5,13 @@ import kchat.AuthProvider
 class BootStrap {
 
     def init = { servletContext ->
-		AuthProvider.findOrSaveWhere(name: 'server1', friendlyName: 'SERVER1')
-		AuthProvider.findOrSaveWhere(name: 'server2', friendlyName: 'SERVER2')
-		AuthProvider.findOrSaveWhere(name: 'server3', friendlyName: 'SERVER3')
-		AuthProvider.findOrSaveWhere(name: 'server4', friendlyName: 'SERVER4')
+    			// THESE NAMES MUST MATCH THE NAMES IN THE CONFIG FILE 
+    			//https://github.com/vahidhedayati/kchat/blob/master/grails-app/conf/kchatConfig.groovy#L55
+    			// which should really be an external configuration file
+		AuthProvider.findOrSaveWhere(name: 'ldap', friendlyName: 'SERVER1')
+		AuthProvider.findOrSaveWhere(name: 'testldap', friendlyName: 'SERVER2')
+		AuthProvider.findOrSaveWhere(name: 'otherldap', friendlyName: 'SERVER3')
+		
 		
 		
     }
